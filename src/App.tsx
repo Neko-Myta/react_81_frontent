@@ -1,30 +1,31 @@
-//import Lesson07 from "./Lesson07/Lesson07";
-//import Lesson08 from "./Lesson08/Lesson08";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//import Lesson10 from "./Lesson10/Lesson10";
-//import Lesson11 from "./Lesson11/Lesson11";
+import GlobalStyles from "./styles/Globalstyle";
+//import Layout from "./components/Layuot/Layout";
 
-import Lesson12 from "./Lesson12/Lesson12";
-
-//import Lesson09 from "./Lesson09/Lesson09";
-
+import { routesEmployeeData } from "./routesEmployee/data";
+import type { RouteObj } from "./routes/type";
+import { v4 } from "uuid";
+import LayoutEmployee from "./components/LayoutEmployee/LayoutEmployee";
 
 // Импорты лекций
 function App() {
+  const routes = routesEmployeeData.map((route: RouteObj) => {
+    return <Route key={v4()} path={route.path} element={route.element} />;
+  });
   return (
     <>
-     
-      {/*<Lesson07 />*/}
-      
-      {/*<Lesson08 />*/}
-      
-      {/*<Lesson09 />*/}
-      
-      {/*<Lesson10 />*/}
+      <BrowserRouter>
+        <GlobalStyles />
 
-      {/*<Lesson11 />*/}
+        {/*<Layout>
+          <Routes>{routes}</Routes>
+        </Layout>*/}
 
-      <Lesson12/>
+        <LayoutEmployee>
+          <Routes>{routes}</Routes>
+        </LayoutEmployee>
+      </BrowserRouter>
     </>
   );
 }
