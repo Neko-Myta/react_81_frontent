@@ -6,5 +6,5 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 18px;
-fron-size: 24px;
+font-size: 24px;
 `

@@ -1,7 +1,8 @@
 import styled from "@emotion/styled"
 
-export const Homework02Wrapper = styled.div`
+export const Homework06Wrapper = styled.div`
 display: flex;
+
 flex-direction: column;
 align-items: center;
 gap: 18px;
